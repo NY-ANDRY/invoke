@@ -180,7 +180,9 @@ const InvokeContextProvider = ({ children }) => {
         changeName(name);
     }, [name]);
     const changeName = async (newName) => {
-        if (!user || data == [] || !getPass(data)) { return; }
+        if (!user || data == [] || !getPass(data)) {
+            return;
+        }
         try {
             const toShow = newName.trim() == "" ? user.displayName : newName;
             const userRef = ref(database, `invoke/${user.uid}`);
@@ -190,11 +192,11 @@ const InvokeContextProvider = ({ children }) => {
         }
     }
     const getPass = (topList) => {
-        topList.forEach((item) => {
-            if (item.id == user.uid) {
+        for (let i = 0; i < topList.length; i++) {
+            if (topList[i].id == user.uid) {
                 return true;
             }
-        });
+        }
         return false;
     }
 
