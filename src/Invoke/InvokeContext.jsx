@@ -180,7 +180,7 @@ const InvokeContextProvider = ({ children }) => {
         changeName(name);
     }, [name]);
     const changeName = async (newName) => {
-        if (!user) { return; }
+        if (!user || data == [] || score <= getLast(data).score) { return; }
         try {
             const toShow = newName.trim() == "" ? user.displayName : newName;
             const userRef = ref(database, `invoke/${user.uid}`);
