@@ -189,8 +189,8 @@ const InvokeContextProvider = ({ children }) => {
             return;
         }
     }
-    const getPass = (topData) => {
-        topData.forEach((item) => {
+    const getPass = (topList) => {
+        topList.forEach((item) => {
             if (item.id == user.uid) {
                 return true;
             }
