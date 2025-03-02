@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 const InvokeList = () => {
     const { QuasWexExort, spellImages } = useInvoke();
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const spellRef = useRef(null);
     const txtRef = useRef(null);
 

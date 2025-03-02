@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 import alacrity from './img/alacrity.jpg';
 import blast from './img/blast.jpg';
 import cm from './img/cm.jpg';
@@ -14,7 +14,7 @@ import quas from './img/quas.jpg';
 import wex from './img/wex.jpg';
 import exort from './img/exort.jpg';
 import mix from './img/invoke.jpg';
-import { database } from "../../config/firebaseConfig";
+import { database } from "../config/firebaseConfig";
 import { ref, onValue, remove, set, update } from "firebase/database";
 
 const InvokeContext = createContext();

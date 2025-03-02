@@ -1,5 +1,4 @@
 import { useEffect, Suspense } from 'react';
-import { MouseContextProvider } from './contexts/MouseContext';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -24,19 +23,17 @@ const App = () => {
     return (
         <>
             <Analytics />
-            <MouseContextProvider>
-                <Suspense fallback={<Loading />}>
-                    <Routes>
-                        {AppRoutes.map(({ path, element, redirect }) =>
-                            redirect ? (
-                                <Route key={path} path={path} element={<Navigate to={redirect} replace />} />
-                            ) : (
-                                <Route key={path} path={path} element={element} />
-                            )
-                        )}
-                    </Routes>
-                </Suspense>
-            </MouseContextProvider>
+            <Suspense fallback={<Loading />}>
+                <Routes>
+                    {AppRoutes.map(({ path, element, redirect }) =>
+                        redirect ? (
+                            <Route key={path} path={path} element={<Navigate to={redirect} replace />} />
+                        ) : (
+                            <Route key={path} path={path} element={element} />
+                        )
+                    )}
+                </Routes>
+            </Suspense>
         </>
     );
 }

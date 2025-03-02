@@ -1,9 +1,8 @@
 import { useRef, useState, useLayoutEffect } from "react";
 import { useInvoke } from "./InvokeContext";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 import InvokeToggle from "./InvokerToggle";
 import gsap from "gsap";
-import { input } from "framer-motion/client";
 
 const InvokeScore = () => {
     const { user, login, logout } = useAuth();

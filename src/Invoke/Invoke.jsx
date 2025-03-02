@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Nav from "../../components/layout/Nav";
+import Nav from "../components/layout/Nav";
 import logo from "./img/logo.svg";
 import InvokeControl from "./InvokeControl";
 import InvokeMain from "./InvokeMain";
@@ -7,14 +7,13 @@ import InvokeTimer from "./InvokeTimer";
 import InvokeScore from "./invokeScore";
 import InvokeList from "./InvokeList";
 import { InvokeContextProvider } from "./InvokeContext";
-import { AuthProvider } from "../../contexts/AuthContext";
+import { AuthProvider } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import './invoke.css';
 
 const Invoke = () => {
     const minWidth = 1100;
     const [isMobile, setIsMobile] = useState(window.innerWidth < minWidth);
-    const navigation = [{ label: "home", link: "/" }];
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < minWidth);
         window.addEventListener("resize", handleResize);
@@ -23,7 +22,6 @@ const Invoke = () => {
 
     return (
         <>
-            <Nav pages={navigation} />
             {isMobile &&
                 <div className="error flex flex-col items-center justify-center h-[100vh]">
                     <p className="pb-8">insupported device</p>
@@ -34,7 +32,7 @@ const Invoke = () => {
             {!isMobile &&
                 <AuthProvider>
                     <InvokeContextProvider>
-                        <section id="invoke" className="flex justify-between tracking-[-0.6px] pl-24 pr-24 h-[100vh]">
+                        <section id="invoke" className="flex justify-between tracking-[-0.6px] pl-8 pr-8 h-[100vh]">
                             <div className="flex">
                                 <InvokeScore />
                             </div>
