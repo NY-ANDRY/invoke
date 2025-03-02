@@ -192,7 +192,7 @@ const InvokeContextProvider = ({ children }) => {
     const getPass = (topData) => {
         topData.forEach((item) => {
             if (item.id == user.uid) {
-                pass = true;
+                return true;
             }
         });
         return false;
