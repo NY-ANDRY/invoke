@@ -1,0 +1,34 @@
+[
+    {
+        "img": "/img/portfolio.png",
+        "name": "Portfolio Website",
+        "made": [
+            { "name": "React", "icon": "/svg/react.svg" },
+            { "name": "Tailwind CSS", "icon": "/svg/tailwind.svg" },
+            { "name": "Figma", "icon": "/svg/figma.svg" },
+            { "name": "GSAP", "icon": "/svg/gsap.svg" }
+        ],
+        "date": "February 2025",
+        "title": "Portfolio Interactif",
+        "txt": "Discover my interactive portfolio highlighting my projects and skills.",
+        "url": "#"
+    },
+    {
+        "img": "/svg/dark-ph.svg",
+        "name": "In Process",
+        "made": [],
+        "date": "Coming Soon",
+        "title": "In Process",
+        "txt": "Coming soon.",
+        "url": ""
+    },
+    {
+        "img": "/svg/dark-ph.svg",
+        "name": "In Process",
+        "made": [],
+        "date": "Coming Soon",
+        "title": "In Process",
+        "txt": "Coming soon.",
+        "url": ""
+    }
+]

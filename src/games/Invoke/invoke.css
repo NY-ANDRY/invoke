@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --invoke-color: #bfc1c5;
+  --blue-2: #6451d1;
+  --invoker-border-color: #a7a7a7;
+  --invoker-quas: #3d64ff;
+  --invoker-wex: #ef3dff;
+  --invoker-exort: #ff3d3d;
+}
+.global-score {
+  color: #c3c4d6;
+}
+#invoke {
+  color: var(--invoke-color);
+  transition: all 130ms ease-out;
+}
+#score {
+  color: var(--blue-2);
+}
+.invoke-border {
+  @apply h-7 w-0.5;
+  background-color: var(--invoker-border-color);
+}
+.invoker-img {
+  border: 2.5px solid black;
+  border-radius: 8px;
+}
+.invoker-img-lg {
+  border: 3.5px solid black;
+  border-radius: 8px;
+}
+.invoker-img-sm {
+  border: 1.5px solid black;
+  border-radius: 4px;
+}
+
+.cast-input {
+  @apply flex items-center justify-center w-[18px] h-[18px] text-center uppercase text-xs;
+  color: white;
+  background-color: black;
+  border-radius: 4px;
+}
