@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Nav from "../components/layout/Nav";
 import logo from "./img/logo.svg";
 import InvokeControl from "./InvokeControl";
 import InvokeMain from "./InvokeMain";
@@ -8,7 +7,6 @@ import InvokeScore from "./invokeScore";
 import InvokeList from "./InvokeList";
 import { InvokeContextProvider } from "./InvokeContext";
 import { AuthProvider } from "../contexts/AuthContext";
-import { Link } from "react-router-dom";
 import './invoke.css';
 
 const Invoke = () => {
@@ -24,9 +22,7 @@ const Invoke = () => {
         <>
             {isMobile &&
                 <div className="error flex flex-col items-center justify-center h-[100vh]">
-                    <p className="pb-8">insupported device</p>
-                    <p className="primary"><Link to={"/"}>back home</Link></p>
-
+                    <p className="pb-8">insupported device, please use a bigger screen.</p>
                 </div>
             }
             {!isMobile &&
