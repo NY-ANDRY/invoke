@@ -39,14 +39,14 @@ const InvokeList = () => {
                 </div>
                 <div onClick={handleClick} className="flex items-center justify-center  cursor-pointer">
 
-                    <div ref={txtRef} className="flex overflow-hidden">
+                    <div ref={txtRef} className="flex w-0 overflow-hidden">
                         <div id="score" className="font-[is-sb] text-[20px] ">
                             SPELL
                         </div>
                         <div className="invoke-border flex items-center justify-center ml-6" />
                     </div>
 
-                    <div ref={spellRef} className="spells flex flex-col gap-4 overflow-hidden w-0">
+                    <div ref={spellRef} className="spells flex flex-col gap-4 overflow-hidden">
                         <InvokeSpell one={QuasWexExort.quas} two={QuasWexExort.wex} three={QuasWexExort.exort} spell={spellImages.blast} />
                         <InvokeSpell one={QuasWexExort.exort} two={QuasWexExort.exort} three={QuasWexExort.exort} spell={spellImages.ss} />
                         <InvokeSpell one={QuasWexExort.exort} two={QuasWexExort.exort} three={QuasWexExort.wex} spell={spellImages.cm} />

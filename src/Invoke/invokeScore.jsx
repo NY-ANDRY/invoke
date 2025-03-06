@@ -6,9 +6,9 @@ import gsap from "gsap";
 
 const InvokeScore = () => {
     const { user, login, logout } = useAuth();
-    const { score, setName, data, loading, error } = useInvoke();
+    const { score, name, setName, data, loading, error } = useInvoke();
     const [open, setOpen] = useState(false);
-    const color = ["#C3C4D6", "#3d64ff", "#ef3dff", "#ff3d3d"]
+    const color = ["#C3C4D6", "#3d64ff", "#ef3dff", "#ff3d3d"];
 
     const globalRef = useRef(null);
     const borderRef = useRef(null);
@@ -46,13 +46,14 @@ const InvokeScore = () => {
                     <div id="score" className="font-[is-sb] text-[20px] relative pr-8" style={{ paddingBottom: open ? 14 : 0 }}>
                         {user && (
                             <>
-                                <button onClick={logout} className="pr-2 cursor-pointer relative top-[1.6px]"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="15" height="15" rx="2" fill="#FF3D3D" />
-                                    <rect x="10.125" y="4.06844" width="1.76471" height="8.52999" rx="0.882353" transform="rotate(45 10.125 4.06844)" fill="#F7F7F7" />
-                                    <rect x="4.06299" y="5.31049" width="1.76471" height="8.49073" rx="0.882353" transform="rotate(-45 4.06299 5.31049)" fill="#F7F7F7" />
-                                </svg>
+                                <button onClick={logout} className="pr-2 cursor-pointer relative top-[1.6px]">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="15" height="15" rx="2" fill="#FF3D3D" />
+                                        <rect x="10.125" y="4.06844" width="1.76471" height="8.52999" rx="0.882353" transform="rotate(45 10.125 4.06844)" fill="#F7F7F7" />
+                                        <rect x="4.06299" y="5.31049" width="1.76471" height="8.49073" rx="0.882353" transform="rotate(-45 4.06299 5.31049)" fill="#F7F7F7" />
+                                    </svg>
                                 </button>
-                                <input type="text" onChange={handleChange} placeholder="your name" className="w-32" />
+                                <input type="text" onChange={handleChange} value={name} placeholder="your name" className="w-32" />
                             </>
                         )}
                         {!user && (
@@ -60,7 +61,7 @@ const InvokeScore = () => {
                         )}
                         <span className="pl-2 pr-2">/</span> <span className=" absolute">{score}</span>
                     </div>
-                    <div ref={globalRef} className="global-score overflow-hidden flex flex-col w-full font-[is-sb] text-sm gap-1">
+                    <div ref={globalRef} className="global-score h-0 overflow-hidden flex flex-col w-full font-[is-sb] text-sm gap-1">
                         {data.length > 0 &&
                             data.map((item, i) => {
                                 let scoreColor;

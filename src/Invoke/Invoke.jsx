@@ -26,28 +26,24 @@ const Invoke = () => {
                 </div>
             }
             {!isMobile &&
-                <AuthProvider>
-                    <InvokeContextProvider>
-                        <section id="invoke" className="flex justify-between tracking-[-0.6px] pl-8 pr-8 h-[100vh]">
-                            <div className="flex">
-                                <InvokeScore />
-                            </div>
-                            <div className="flex flex-col items-center gap-8 pt-20 relative ">
-                                <img src={logo} width={140} alt="Logo" className="pb-14" />
-                                <InvokeTimer />
-                                <div className="Invoke-game flex flex-col items-center justify-center w-full pt-12 pb-24">
-                                    <InvokeMain />
-                                </div>
-                                <div className="invoker-control flex flex-col items-center justify-center pt-6">
-                                    <InvokeControl />
-                                </div>
-                            </div>
-                            <div className="flex">
-                                <InvokeList />
-                            </div>
-                        </section>
-                    </InvokeContextProvider>
-                </AuthProvider>
+                <section id="invoke" className="flex justify-between tracking-[-0.6px] pl-8 pr-8 h-[100vh]">
+                    <div className="flex">
+                        <InvokeScore />
+                    </div>
+                    <div className="flex flex-col items-center gap-8 pt-20 relative ">
+                        <img src={logo} width={140} alt="Logo" className="pb-14" />
+                        <InvokeTimer />
+                        <div className="Invoke-game flex flex-col items-center justify-center w-full pt-12 pb-24">
+                            <InvokeMain />
+                        </div>
+                        <div className="invoker-control flex flex-col items-center justify-center pt-6">
+                            <InvokeControl />
+                        </div>
+                    </div>
+                    <div className="flex">
+                        <InvokeList />
+                    </div>
+                </section>
             }
 
         </>

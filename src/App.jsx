@@ -5,6 +5,10 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import AppRoutes from './AppRoutes';
 import Loading from './pages/Loading';
 import { Analytics } from "@vercel/analytics/react"
+import { AuthProvider } from './contexts/AuthContext';
+import Header from './pages/Header';
+import { InvokeContextProvider } from './Invoke/InvokeContext';
+import { StatProvider } from "./contexts/StatisticsContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,17 +27,24 @@ const App = () => {
     return (
         <>
             <Analytics />
-            <Suspense fallback={<Loading />}>
-                <Routes>
-                    {AppRoutes.map(({ path, element, redirect }) =>
-                        redirect ? (
-                            <Route key={path} path={path} element={<Navigate to={redirect} replace />} />
-                        ) : (
-                            <Route key={path} path={path} element={element} />
-                        )
-                    )}
-                </Routes>
-            </Suspense>
+            <AuthProvider>
+                <InvokeContextProvider>
+                    <StatProvider>
+                        <Header />
+                        <Suspense fallback={<Loading />}>
+                            <Routes>
+                                {AppRoutes.map(({ path, element, redirect }) =>
+                                    redirect ? (
+                                        <Route key={path} path={path} element={<Navigate to={redirect} replace />} />
+                                    ) : (
+                                        <Route key={path} path={path} element={element} />
+                                    )
+                                )}
+                            </Routes>
+                        </Suspense>
+                    </StatProvider>
+                </InvokeContextProvider>
+            </AuthProvider>
         </>
     );
 }

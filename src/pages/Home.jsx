@@ -1,7 +1,5 @@
 import usePageTracking from '../hooks/usePageTracking';
 import Invoke from '../Invoke/Invoke';
-import Footer from './Footer';
-import Nav from '../components/layout/Nav';
 
 function Home() {
     usePageTracking();
