@@ -60,6 +60,9 @@ header {
 .statistique-filtre {
   color: #6a6a6c;
 }
+.color-primary {
+  color: var(--color-primary);
+}
 
 input:focus {
   border: 0;

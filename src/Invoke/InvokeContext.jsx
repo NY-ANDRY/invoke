@@ -1,13 +1,15 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { spellName, spellImages, QuasWexExort } from "./spellData";
+import { spellName, spellImages, QuasWexExort, spellDescription } from "./spellData";
 import { fetchLeaderboard, saveRealtimeScore, saveScore, changeRealtimeName } from "./InvokeFirebase";
 
 const InvokeContext = createContext();
 
 const InvokeContextProvider = ({ children }) => {
     const [name, setName] = useState("");
+    const [demo, setDemo] = useState(true);
     const [currentSpells, setCurrentSpells] = useState(Array(5).fill({ name: null, image: null }));
+    const [currentInvocation, setCurrentInvocation] = useState({});
     const [duration, setDuration] = useState(30);
     const [currentSpell, setCurrentSpell] = useState("blast");
     const [invoke, setInvoke] = useState(0);
@@ -107,14 +109,19 @@ const InvokeContextProvider = ({ children }) => {
         }
         console.log(strikeCombo);
     }, [invoke]);
+    useEffect(() => {
+        setCurrentInvocation({ image: spellImages[currentSpell], description: spellDescription[currentSpell] });
+    }, [currentSpell]);
 
     return (
         <InvokeContext.Provider value={{
             currentSpell, setCurrentSpell, score, setScore, combo, setCombo, invoke,
             setInvoke, play, setPlay, remainingTime, setRemainingTime, currentSpells,
             setCurrentSpells, restart, duration, setDuration,
-            spellName, spellImages, QuasWexExort, name, setName,
-            data, loading, error
+            spellImages, QuasWexExort, name, setName,
+            data, loading, error,
+            setCurrentInvocation, currentInvocation,
+            demo, setDemo
         }}>
             {children}
         </InvokeContext.Provider>

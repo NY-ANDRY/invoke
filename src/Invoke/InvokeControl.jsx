@@ -9,7 +9,7 @@ import InvokeIMG from './img/invoke.jpg';
 
 const InvokerControl = () => {
     const Invoker = useRef(new Voker());
-    const { setCurrentSpell, setInvoke, restart, QuasWexExort, play } = useInvoke();
+    const { setCurrentSpell, setInvoke, restart, QuasWexExort, play, demo, setDemo } = useInvoke();
 
     const [quas, setQuas] = useState('a');
     const [wex, setWex] = useState('s');
@@ -82,8 +82,14 @@ const InvokerControl = () => {
         <>
 
             <div className="flex justify-center relative gap-8 pt-0 pb-20">
-                {!play &&
-                    <div className="absolute -top-16">PRESS SPACE TO START</div>
+                {(!play && !demo) &&
+                    <>
+                        <div className="absolute -top-24 cursor-pointer" onClick={() => { setDemo(true) }}>demo</div>
+                        <div className="absolute -top-16">PRESS SPACE TO START</div>
+                    </>
+                }
+                {(demo) &&
+                    <div onClick={() => { setDemo(false) }} className="absolute -top-16 cursor-pointer">PLAY</div>
                 }
                 {orbs.map((orb, index) => (
                     <img key={index} src={orbImages[orb]} width={82} className="invoker-img" alt={`Orb ${orb}`} />
