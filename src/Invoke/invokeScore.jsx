@@ -92,16 +92,6 @@ const InvokeScore = () => {
                         {error &&
                             <div key={i} className="score"><span className="pr-3">0</span><span>disconnected</span></div>
                         }
-                        {!user &&
-                            <div onClick={login} className="score cursor-pointer" >
-                                <span>connect</span>
-                            </div>
-                        }
-                        {user &&
-                            <div onClick={logout} className="score cursor-pointer" >
-                                <span>disconnect</span>
-                            </div>
-                        }
                     </div>
                 </div>
                 <div className="flex items-center justify-center cursor-pointer" onClick={handleClick}>

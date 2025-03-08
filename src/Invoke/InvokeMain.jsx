@@ -8,7 +8,6 @@ const InvokeMain = () => {
 
     return (
         <div className="spell-list flex flex-col items-center justify-center relative w-[50vw]">
-            {/* <div className="absolute bottom-[-72px] cursor-pointer" onClick={() => { setDemo(!demo) }}>{demo ? "PLAY" : "demo"}</div> */}
             {!demo &&
                 <div className="flex relative">
                     <div className="flex gap-2">

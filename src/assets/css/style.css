@@ -63,6 +63,9 @@ header {
 .color-primary {
   color: var(--color-primary);
 }
+.color-secondary {
+  color: var(--color-secondary);
+}
 
 input:focus {
   border: 0;

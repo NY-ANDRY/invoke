@@ -10,4 +10,5 @@
   --bg-color: linear-gradient(to bottom, #1c1c1c, #0c0e13);
   --ease-main: cubic-bezier(0.3, 0.84, 0.66, 1);
   --color-primary: #a8a8a8;
+  --color-secondary: #a8a8a8b7;
 }
