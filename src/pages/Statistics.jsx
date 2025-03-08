@@ -33,14 +33,14 @@ const Stat = () => {
     };
 
     return (
-        <section id="stat" className="flex flex-col w-full items-center p-20">
-            <div className="w-[1100px]">
+        <section id="stat" className="flex flex-col w-full items-center p-2 pt-20 lg:p-20">
+            <div className="w-full sm:w-[720px] lg:w-[1100px]">
                 <div className="stat-head flex items-center justify-between p-4">
                     <div className="flex items-center gap-4">
                         <div className="">
                             <Search animate={loading ? true : false} />
                         </div>
-                        <input onChange={(e) => handleNameChange(e)} type="text" className="w-96" placeholder="Name" />
+                        <input onChange={(e) => handleNameChange(e)} type="text" className="w-40 lg:w-96" placeholder="Name" />
                     </div>
                     <div className="flex items-center gap-3">
                         <div onClick={updateStat} className="">
@@ -49,17 +49,16 @@ const Stat = () => {
                         <input onChange={(e) => handleNbChange(e)} type="number" className="w-16" value={nbStat} placeholder="number" />
                     </div>
                 </div>
-                <div className="statistique-filtre flex gap-4 items-center font-[is-sb] text-[15px] whitespace-nowrap p-4 mt-2">
-                    <div className="flex items-center w-32 gap-2">
+                <div className="statistique-filtre flex gap-4 items-center font-[is-sb] text-xs lg:text-[15px] whitespace-nowrap p-4 mt-2">
+                    <div className="flex items-center w-20 lg:w-32 gap-1 lg:gap-2">
                         <BtnFiltre name={"best score"} onClick={handleScore}></BtnFiltre>
                     </div>
                     <div className="flex flex-1 items-center gap-2">
                         <BtnFiltre name={"name"} onClick={handleName}></BtnFiltre>
 
                     </div>
-                    <div className="flex items-center w-32 gap-2">
+                    <div className="flex items-center  w-20 lg:w-32 gap-2">
                         <BtnFiltre name={"combo"} onClick={handleCombo}></BtnFiltre>
-
                     </div>
                 </div>
 
@@ -76,14 +75,14 @@ const Stat = () => {
                             scoreColor = color[3];
                         }
                         return (
-                            <div key={i} style={{ color: scoreColor }} className="statistique-filtre flex gap-4 items-center font-[is-sb] text-[15px] whitespace-nowrap pl-4 pr-4 mt-3">
-                                <div className="flex items-center w-32 gap-2">
+                            <div key={i} style={{ color: scoreColor }} className="statistique-filtre flex gap-4 items-center font-[is-sb] text-[13.5px] lg:text-[15px] whitespace-nowrap pl-4 pr-4 mt-3">
+                                <div className="flex items-center w-20 lg:w-32 gap-2">
                                     {doc.score}
                                 </div>
-                                <div className="flex flex-1 items-center gap-2">
+                                <div className="flex flex-1 items-center gap-2 whitespace-nowrap overflow-hidden">
                                     {doc.name}
                                 </div>
-                                <div className="flex items-center w-32 gap-2">
+                                <div className="flex items-center  w-20 lg:w-32 gap-2">
                                     {doc.combo}
                                 </div>
                             </div>

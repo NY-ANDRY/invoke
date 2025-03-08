@@ -46,7 +46,7 @@ const InvokeList = () => {
                         <div className="invoke-border flex items-center justify-center ml-6" />
                     </div>
 
-                    <div ref={spellRef} className="spells flex flex-col gap-4 overflow-hidden">
+                    <div ref={spellRef} className="spells flex flex-col gap-4 pb-4 lg:pb-0 overflow-hidden">
                         <InvokeSpell one={QuasWexExort.quas} two={QuasWexExort.wex} three={QuasWexExort.exort} spell={spellImages.blast} />
                         <InvokeSpell one={QuasWexExort.exort} two={QuasWexExort.exort} three={QuasWexExort.exort} spell={spellImages.ss} />
                         <InvokeSpell one={QuasWexExort.exort} two={QuasWexExort.exort} three={QuasWexExort.wex} spell={spellImages.cm} />

@@ -81,18 +81,18 @@ const InvokerControl = () => {
     return (
         <>
 
-            <div className="flex justify-center relative gap-8 pt-0 pb-20">
+            <div className="flex justify-center relative gap-8 pt-0 lg:pb-20">
                 {(!play && !demo) &&
                     <>
-                        <div className="absolute -top-24 cursor-pointer" onClick={() => { setDemo(true) }}>demo</div>
-                        <div className="absolute -top-16">PRESS SPACE TO START</div>
+                        <div className="absolute text-sm lg:text-base -top-24 cursor-pointer" onClick={() => { setDemo(true) }}>demo</div>
+                        <div onClick={restart} className="absolute text-sm lg:text-base -top-16">PRESS SPACE OR HERE TO START</div>
                     </>
                 }
                 {(demo) &&
-                    <div onClick={() => { setDemo(false) }} className="absolute -top-16 cursor-pointer">PLAY</div>
+                    <div onClick={() => { setDemo(false) }} className="absolute text-sm lg:text-base -top-16 cursor-pointer">PLAY</div>
                 }
                 {orbs.map((orb, index) => (
-                    <img key={index} src={orbImages[orb]} width={82} className="invoker-img" alt={`Orb ${orb}`} />
+                    <img key={index} src={orbImages[orb]} className="invoker-img w-[60px] lg:w-[82px]" alt={`Orb ${orb}`} />
                 ))}
             </div>
             <div className="flex gap-4 pt-6">
@@ -104,7 +104,7 @@ const InvokerControl = () => {
                         onChange={(e) => setQuas(e.target.value)}
                         maxLength={1}
                     />
-                    <img src={quasIMG} width={52} className="invoker-img" alt="quas" />
+                    <img src={quasIMG} className="invoker-img w-16 lg:w-[52px]" alt="quas" />
                 </div>
                 <div onClick={handleWex} className="cast flex flex-col items-center gap-3 w-fit">
                     <input
@@ -114,7 +114,7 @@ const InvokerControl = () => {
                         onChange={(e) => setWex(e.target.value)}
                         maxLength={1}
                     />
-                    <img src={wexIMG} width={52} className="invoker-img" alt="wex" />
+                    <img src={wexIMG} className="invoker-img w-16 lg:w-[52px]" alt="wex" />
                 </div>
                 <div onClick={handleExort} className="cast flex flex-col items-center gap-3 w-fit">
                     <input
@@ -124,7 +124,7 @@ const InvokerControl = () => {
                         onChange={(e) => setExort(e.target.value)}
                         maxLength={1}
                     />
-                    <img src={exortIMG} width={52} className="invoker-img" alt="exort" />
+                    <img src={exortIMG} className="invoker-img w-16 lg:w-[52px]" alt="exort" />
                 </div>
                 <div onClick={handleInvocation} className="cast flex flex-col items-center gap-3 w-fit">
                     <input
@@ -134,7 +134,7 @@ const InvokerControl = () => {
                         onChange={(e) => setMix(e.target.value)}
                         maxLength={1}
                     />
-                    <img src={InvokeIMG} width={52} className="invoker-img" alt="mix" />
+                    <img src={InvokeIMG} className="invoker-img w-16 lg:w-[52px]" alt="mix" />
                 </div>
             </div>
         </>

@@ -35,6 +35,40 @@
   border-radius: 4px;
 }
 
+/* Écran tablette (moins de 1024px) */
+@media screen and (max-width: 1024px) {
+  .invoker-img {
+    border: 2.5px solid black;
+    border-radius: 4px;
+  }
+  .invoker-img-lg {
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 86px;
+  }
+  .invoker-img-sm {
+    border: 1.5px solid black;
+    border-radius: 2px;
+  }
+}
+
+/* Écran mobile (moins de 768px) */
+@media screen and (max-width: 768px) {
+  .invoker-img {
+    border: 2.5px solid black;
+    border-radius: 4px;
+  }
+  .invoker-img-lg {
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 86px;
+  }
+  .invoker-img-sm {
+    border: 1.5px solid black;
+    border-radius: 2px;
+  }
+}
+
 .cast-input {
   @apply flex items-center justify-center w-[18px] h-[18px] text-center uppercase text-xs;
   color: white;

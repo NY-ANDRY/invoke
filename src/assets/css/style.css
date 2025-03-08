@@ -1,6 +1,7 @@
 @import "tailwindcss";
 html {
   @apply w-full relative;
+  min-height: 100vh;
 }
 
 body {
@@ -8,7 +9,19 @@ body {
   font-family: "is", monospace, sans-serif;
 
   background: var(--bg-color);
-  background-attachment: fixed;
+  /* background-repeat: repeat; */
+  background-size: cover;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  background-size: cover;
+  z-index: -1;
 }
 
 ::-webkit-scrollbar {

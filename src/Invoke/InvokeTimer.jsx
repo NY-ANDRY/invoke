@@ -19,8 +19,8 @@ const InvokeTimer = () => {
     return (
         <>
             <div className="flex items-center justify-center relative w-full">
-                <div className="time font-[is-sb] text-4xl p-6">{remainingTime}</div>
-                <div id="combo" className="absolute font-[is-m] left-[70%] text-4xl" style={{ color: color[focus] }}>{combo > 0 && "x" + combo}</div>
+                <div className="time font-[is-sb] text-3xl lg:text-4xl p-6">{remainingTime}</div>
+                <div id="combo" className="absolute font-[is-m] left-[70%] text-3xl lg:text-4xl" style={{ color: color[focus] }}>{combo > 0 && "x" + combo}</div>
             </div>
         </>
     )

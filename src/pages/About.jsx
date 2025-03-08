@@ -4,8 +4,8 @@ const About = () => {
 
 
     return (
-        <section className="flex flex-col  w-full h-[100vh] items-center pt-24 pb-4">
-            <div className="flex flex-col w-3xl h-full gap-2">
+        <section className="flex flex-col w-full h-[100vh] items-center p-5 pt-24 pb-4">
+            <div className="flex flex-col w-full lg:w-3xl h-full gap-2">
                 <div className="font-[is-m] color-primary text-[15px]">
                     Hello there! Do you know what Dota is? Do you know who Invoker is?
                 </div>
@@ -26,7 +26,7 @@ const About = () => {
                     to the platform.
                 </div>
             </div>
-            <div className="flex w-full justify-center items-center gap-16 p-4">
+            <div className="flex w-full flex-col lg:flex-row justify-center items-center gap-4 lg:gap-16 p-0 color-primary">
                 <div className="by"><Link to={"https://store.steampowered.com/app/570/Dota_2/"}>inspired by dota 2</Link></div>
                 <div className="by">
                     <svg width="152" height="32" viewBox="0 0 176 37" fill="none" xmlns="http://www.w3.org/2000/svg">

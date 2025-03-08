@@ -8,9 +8,13 @@ const Header = () => {
 
     return (
         <header className="fixed flex items-center justify-between pl-8 pr-8 pt-6 pb-6 w-full">
-            <div className="flex"><img src="/svg/logo_sm.svg" alt="" /></div>
-            <div className="flex gap-6 font-[is-sb] text-[15px] relative">
-                <Link to={"/"} className="head-item flex-center opacity-70">Home</Link>
+            <div className="flex">
+                <Link to={"/"}>
+                    <img src="/svg/logo_sm.svg" alt="" />
+                </Link>
+            </div>
+            <div className="flex gap-6 font-[is-sb] text-sm lg:text-[15px] relative whitespace-nowrap">
+                <Link to={"/"} className="head-item flex-center opacity-70 overflow-hidden w-0 md:w-full lg:w-full">Home</Link>
                 <Link to={"/stat"} className="head-item flex-center opacity-70">Stat</Link>
                 <Link to={"/about"} className="head-item flex-center opacity-70">About</Link>
                 {user &&

@@ -30,7 +30,7 @@ const BtnFiltre = ({ name, onClick }) => {
     }, [selected]);
 
     return (
-        <button onMouseEnter={() => { setSelected(true) }} onMouseLeave={() => { setSelected(false) }} onClick={onClick} className="flex items-center gap-2 cursor-pointer">
+        <button onMouseEnter={() => { setSelected(true) }} onMouseLeave={() => { setSelected(false) }} onClick={onClick} className="flex items-center gap-1 lg:gap-2 cursor-pointer">
             <span className="transition-all" style={{ color: selected ? fillColor[1] : fillColor[0] }}>{name}</span>
             <div ref={ref} className="filtre-icon">
                 <Filtre1 selected={selected} />
