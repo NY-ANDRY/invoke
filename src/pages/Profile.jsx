@@ -91,7 +91,7 @@ const Profile = () => {
                 )}
                 {user?.uid == id &&
                     <>
-                        <div className="flex gap-8 font-[is-m] text-sm">
+                        <div className="flex gap-8 font-[is-m] text-sm whitespace-nowrap">
                             <button onClick={logout} className="bg-black pt-1.5 pb-1.5 pl-5 pr-5 rounded-sm">Disconnect</button>
                             <button onClick={handleRemove} className="bg-red pt-1.5 pb-1.5 pl-5 pr-5 rounded-sm">Delete your data</button>
                         </div>
