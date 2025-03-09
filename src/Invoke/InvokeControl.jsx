@@ -84,12 +84,12 @@ const InvokerControl = () => {
             <div className="flex justify-center relative gap-8 pt-0 lg:pb-20">
                 {(!play && !demo) &&
                     <>
-                        <div className="absolute text-sm lg:text-base -top-24 cursor-pointer" onClick={() => { setDemo(true) }}>demo</div>
-                        <div onClick={restart} className="absolute text-sm lg:text-base -top-16">PRESS SPACE OR HERE TO START</div>
+                        <button className="absolute text-sm lg:text-base -top-24 lg:-top-28 bg-black p-1 px-4 rounded-sm" onClick={() => { setDemo(true) }}>demo</button>
+                        <div onClick={restart} className="absolute text-sm lg:text-base -top-12 lg:-top-16">PRESS SPACE OR HERE TO START</div>
                     </>
                 }
                 {(demo) &&
-                    <div onClick={() => { setDemo(false) }} className="absolute text-sm lg:text-base -top-16 cursor-pointer">PLAY</div>
+                    <button onClick={() => { setDemo(false) }} className="absolute text-sm lg:text-base -top-16 bg-black p-1 px-4 rounded-sm">PLAY</button>
                 }
                 {orbs.map((orb, index) => (
                     <img key={index} src={orbImages[orb]} className="invoker-img w-[60px] lg:w-[82px]" alt={`Orb ${orb}`} />
