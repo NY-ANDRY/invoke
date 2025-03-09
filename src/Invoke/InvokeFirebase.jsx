@@ -57,6 +57,15 @@ export const saveScore = async (user, name, score, strikeCombo, bestCombo) => {
     try {
         const userRef = doc(db, "stat", user.uid);
         const userSnap = await getDoc(userRef);
+        if (!userSnap.exists()) {
+            await setDoc(userRef, {
+                name: name,
+                score: score,
+                combo: strikeCombo,
+                bestCombo: bestCombo,
+            });
+            return;
+        }
         const data = userSnap.data();
         const newCombo = data.combo + strikeCombo;
         const newScore = (!userSnap.exists() || data.score < score) ? score : data.score;
@@ -76,5 +85,25 @@ export const changeRealtimeName = async (user, newName, data) => {
         await update(userRef, { name: newName.trim() || user.displayName });
     } catch (error) {
         console.error("Error updating name:", error);
+    }
+};
+
+export const changeFirestoreName = async (user, newName) => {
+    if (!user || !newName.trim()) return;
+
+    try {
+        const userRef = doc(db, "stat", user.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (userSnap.exists()) {
+            const currentData = userSnap.data();
+            const updatedData = { ...currentData, name: newName.trim() };
+
+            await setDoc(userRef, updatedData);
+        } else {
+            console.error("User document does not exist in Firestore");
+        }
+    } catch (error) {
+        console.error("Error updating name in Firestore:", error);
     }
 };

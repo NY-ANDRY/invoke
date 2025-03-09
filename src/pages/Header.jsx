@@ -19,7 +19,7 @@ const Header = () => {
                 <Link to={"/about"} className="head-item flex-center opacity-70">About</Link>
                 {user &&
                     <>
-                        <Link to={"/profile"} className="head-item flex-center opacity-70">{name == "" ? user.displayName : name}</Link>
+                        <Link to={"/profile/" + user.uid} className="head-item flex-center opacity-70">{name == "" ? user.displayName : name}</Link>
                         <button onClick={logout} className="pr-2 cursor-pointer relative top-[-1px]">
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="15" height="15" rx="2" fill="#FF3D3D" />

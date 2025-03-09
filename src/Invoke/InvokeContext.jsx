@@ -10,7 +10,7 @@ const InvokeContextProvider = ({ children }) => {
     const [demo, setDemo] = useState(true);
     const [currentSpells, setCurrentSpells] = useState(Array(5).fill({ name: null, image: null }));
     const [currentInvocation, setCurrentInvocation] = useState({});
-    const [duration, setDuration] = useState(30);
+    const [duration, setDuration] = useState(10);
     const [currentSpell, setCurrentSpell] = useState("blast");
     const [invoke, setInvoke] = useState(0);
     const [score, setScore] = useState(0);

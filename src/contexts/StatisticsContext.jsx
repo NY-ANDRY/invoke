@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { collection, getDocs, query, orderBy, limit, where } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, deleteDoc, query, orderBy, limit, where } from "firebase/firestore";
 import { db } from "../config/firebaseConfig";
 
 const StatContext = createContext();
@@ -68,11 +68,35 @@ export const StatProvider = ({ children }) => {
             }
         }
     }
+    const getDataOf = async (id) => {
+        if (!id) return;
 
+        const docRef = doc(db, "stat", id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            return docSnap.data();
+        } else {
+            return null;
+        }
+    }
+    const removeDataOf = async (id) => {
+        if (!id) return;
+
+        const docRef = doc(db, "stat", id);
+        try {
+            await deleteDoc(docRef);
+            setStatistics(prevStats => prevStats.filter(stat => stat.id !== id));
+        } catch (err) {
+            console.error("Error removing document: ", err.message);
+            setError(err.message);
+        }
+    };
     return (
         <StatContext.Provider value={{
             statistics, loading, error, updateStat, nbStat, setNbStat,
-            name, setName, filtre, setFiltre, inversestatistics, order, setOrder
+            name, setName, filtre, setFiltre, inversestatistics, order, setOrder,
+            getDataOf, removeDataOf
         }}>
             {children}
         </StatContext.Provider>
