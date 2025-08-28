@@ -15,8 +15,6 @@ const Stat = () => {
     }, 400);
     const handleNbChange = useDebouncedCallback((value) => {
         setNbStat(value);
-        console.log(nbStat);
-
     }, 400);
 
     const changeTo = (newfiltre) => {
