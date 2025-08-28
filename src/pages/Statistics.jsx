@@ -2,19 +2,23 @@ import { useStatistique } from "../contexts/StatisticsContext";
 import Refresh from "../components/icons/Refresh";
 import Search from "../components/icons/Search";
 import BtnFiltre from "../components/buttons/BtnFiltre";
+import { useDebouncedCallback } from "use-debounce";
 
 const Stat = () => {
     const { statistics, loading, error, updateStat, nbStat, setNbStat, setName, filtre, setFiltre, inversestatistics } = useStatistique();
     const color = ["#C3C4D6", "#3d64ff", "#ef3dff", "#ff3d3d"];
 
-    const handleNameChange = (e) => {
-        if (e.target.value != null && e.target.value != undefined) {
-            setName(e.target.value);
+    const handleNameChange = useDebouncedCallback((value) => {
+        if (value != null && value != undefined) {
+            setName(value);
         }
-    }
-    const handleNbChange = (e) => {
-        setNbStat(e.target.value);
-    }
+    }, 400);
+    const handleNbChange = useDebouncedCallback((value) => {
+        setNbStat(value);
+        console.log(nbStat);
+
+    }, 400);
+
     const changeTo = (newfiltre) => {
         if (filtre == newfiltre) {
             inversestatistics();
@@ -40,13 +44,13 @@ const Stat = () => {
                         <div className="">
                             <Search animate={loading ? true : false} />
                         </div>
-                        <input onChange={(e) => handleNameChange(e)} type="text" className="w-40 lg:w-96" placeholder="Name" />
+                        <input onChange={(e) => handleNameChange(e.target.value)} type="text" className="w-40 lg:w-96" placeholder="Name" />
                     </div>
                     <div className="flex items-center gap-3">
                         <div onClick={updateStat} className="">
                             <Refresh animate={loading ? true : false} />
                         </div>
-                        <input onChange={(e) => handleNbChange(e)} type="number" className="w-16" value={nbStat} placeholder="number" />
+                        <input onChange={(e) => handleNbChange(e.target.value)} type="number" className="w-16" placeholder={nbStat == "" ? 'count' : nbStat} />
                     </div>
                 </div>
                 <div className="statistique-filtre flex gap-4 items-center font-[is-sb] text-xs lg:text-[15px] whitespace-nowrap p-4 mt-2">
