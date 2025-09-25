@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const About = () => {
 
 
@@ -27,7 +25,15 @@ const About = () => {
                 </div>
             </div>
             <div className="flex w-full flex-col lg:flex-row justify-center items-center gap-4 lg:gap-16 p-0 color-primary">
-                <div className="by"><Link to={"https://store.steampowered.com/app/570/Dota_2/"}>inspired by dota 2</Link></div>
+                <div className="by">
+                    <a
+                        href="https://store.steampowered.com/app/570/Dota_2/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        inspired by dota 2
+                    </a>
+                </div>
                 <div className="by">
                     <svg width="152" height="32" viewBox="0 0 176 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M150.308 35.9999V1.43994H156.548V35.9999H150.308ZM153.284 35.9999V31.0559H175.172V35.9999H153.284ZM153.284 20.6399V15.7919H173.492V20.6399H153.284ZM153.284 6.38394V1.43994H174.644V6.38394H153.284Z" fill="url(#paint0_linear_538_5)" />
@@ -71,8 +77,15 @@ const About = () => {
                     </svg>
 
                 </div>
-                <div className="by"><Link to={"https://nyandry.vercel.app/"}>Created by Paul Ferdinah</Link></div>
-            </div>
+                <div className="by">
+                    <a
+                        href="https://nyandry.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Created by Paul Ferdinah
+                    </a>
+                </div>            </div>
         </section>
     )
 }
