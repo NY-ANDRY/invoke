@@ -1,0 +1,1 @@
+import{c as o,F as e}from"./index-BjgbuZL3.js";import{N as n}from"./NotFound-C0yXaNv3.js";const a=()=>o(e,{children:o("section",{id:"notFound",className:"flex-center w-full min-h-[96vh]",children:o(n,{})})});export{a as default};
